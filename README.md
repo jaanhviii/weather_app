@@ -1,0 +1,1 @@
+Developed a responsive weather forecasting web application using HTML, CSS, and JavaScript. Integrated real-time data from OpenWeather APIs to display current weather, 5-day forecast, UV index, and air quality. Implemented dynamic UI updates, theme changes based on weather conditions, and interactive features like city search and map visualization using Leaflet.
