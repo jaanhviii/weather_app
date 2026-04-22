@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app-root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #b5b5b5;
+    color: black
+}
+
+.wrapper-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    width: 60%;
+    margin-top: 20px;
+    border-radius: 20px;
+    z-index: 1;
+
+}
+
+.today-highlights h5 {
+    margin-bottom: 15px;
+}
+
+.five-days-forecast h5 {
+    margin-bottom: 5px;
+}
+
+.left-panel {
+    width: 40%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 0px 0px 20px;
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 1rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: black;
+    font-size: 10px;
+}
+
+.search-input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.search-input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+.search-btn {
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+.search-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.errormsg {
+    color: #000000;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.today-highlights {
+    margin-bottom: 3rem;
+}
+
+.weather-temperature {
+    font-size: xx-large;
+}
+
+.city-map-container {
+    margin-top: 2rem;
+}
+
+.city-map-title {
+    margin-bottom: 0.8rem;
+}
+
+.city-map {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid rgb(128 128 128);
+}
+
+.right-panel {
+    width: 60%;
+    background-color: rgb(243, 243, 243);
+    border-radius: 0px 20px 20px 0px;
+}
+
+/* Glass panels - preserves YOUR layout  */
+/* body[class$="-theme"] .left-panel,
+body[class$="-theme"] .right-panel {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+} */
+
+body[class$="-theme"] .left-panel,
+body[class$="-theme"] .right-panel {
+    background: rgba(255, 255, 255, 0.25) !important;
+    /* Darker */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.highlight-card {
+    /* 0.1 se 0.5 ke beech transparency rakhein */
+    background-color: rgba(255, 255, 255, 0.2);
+
+    border-radius: 10px;
+    text-align: center;
+
+    /* Blur thoda badha dein taaki asar saaf dikhe */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    /* Optional: Card ko thoda ubhaarne ke liye border */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-name {
+    font-size: 10px;
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    padding: 8px 10px;
+}
+
+.card-value {
+    padding: 8px 10px;
+}
+
+.uv-status,
+.wind-status-text,
+.air-quality-status,
+.humidity-status,
+.visibility-status {
+    padding: 8px 10px;
+    opacity: 0.9;
+    font-size: 15px;
+}
+
+.left-panel,
+.right-panel {
+    padding: 20px;
+}
+
+
+.forecast-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    overflow-x: auto;
+}
+
+.forecast-day {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 5px 10px;
+    min-width: 70px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.forecast-day .day-name {
+    font-size: small;
+}
+
+.forecast-day img {
+    height: 35px;
+    width: 35px;
+    margin: 5px 0;
+}
+
+.forecast-day .temp-range {
+    font-size: small;
+    font-weight: 600;
+}
+
+/* Video wrapper - matches your app size */
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Individual videos inside wrapper */
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Show matching video */
+body.sunny-theme .sunny-video {
+    display: block;
+}
+
+body.rainy-theme .rainy-video {
+    display: block;
+}
+
+body.cloudy-theme .cloudy-video {
+    display: block;
+}
+
+body.snowy-theme .snowy-video {
+    display: block;
+}
+
+body.thunder-theme .thunder-video {
+    display: block;
+}
+
+/* App background only */
+/* body.sunny-theme .wrapper-container {
+    background: linear-gradient(135deg, #87CEEB 0%, #98D8C8 100%);
+}
+
+body.rainy-theme .wrapper-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body.cloudy-theme .wrapper-container {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+} */

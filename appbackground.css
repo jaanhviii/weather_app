@@ -1,0 +1,45 @@
+/* ==== WEATHER THEMES (background only for now) ==== */
+.app-root {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+body.sunny-theme .app-root {
+  background:
+    linear-gradient(180deg, rgba(24, 48, 96, 0.6), rgba(12, 24, 60, 0.95)),
+    url("images/bg-sunny.jpg") center/cover no-repeat fixed;
+}
+
+body.cloudy-theme .app-root {
+  background:
+    linear-gradient(180deg, rgba(18, 30, 50, 0.7), rgba(10, 18, 35, 0.96)),
+    url("images/bg-cloudy.jpg") center/cover no-repeat fixed;
+}
+
+body.rainy-theme .app-root {
+  background:
+    linear-gradient(180deg, rgba(5, 15, 35, 0.8), rgba(5, 10, 25, 0.98)),
+    url("images/bg-rainy.jpg") center/cover no-repeat fixed;
+}
+
+body.storm-theme .app-root {
+  background:
+    linear-gradient(180deg, rgba(3, 8, 20, 0.85), rgba(1, 2, 10, 0.98)),
+    url("images/bg-storm.jpg") center/cover no-repeat fixed;
+}
+
+body.snow-theme .app-root {
+  background:
+    linear-gradient(180deg, rgba(190, 210, 235, 0.75), rgba(40, 60, 90, 0.95)),
+    url("images/bg-snow.jpg") center/cover no-repeat fixed;
+}
+
+/* A generic glassy look for your main panels (you can tweak later) */
+.left-panel,
+.right-panel > section {
+  background: rgba(6, 15, 35, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
